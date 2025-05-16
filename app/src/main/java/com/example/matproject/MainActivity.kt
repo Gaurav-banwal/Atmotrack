@@ -23,8 +23,6 @@ import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
-//  Weather API :- ddde54083cec202fb9e24f2f7427a6db
-// Air Quality API key: 00f47329e1baf40566d9c0c3d2c8bd71
 class MainActivity : AppCompatActivity() {
     private val binding : ActivityMainBinding by lazy {
         ActivityMainBinding.inflate(layoutInflater)
@@ -98,8 +96,8 @@ class MainActivity : AppCompatActivity() {
             .baseUrl("https://api.openweathermap.org/data/2.5/")
             .build().create(ApiInterface::class.java)
         val response =
-            retrofit.getweatherdata(cityName, appid = "ddde54083cec202fb9e24f2f7427a6db", units = "metric")
-
+            retrofit.getweatherdata(cityName, appid = "put your api here ", units = "metric")
+//put your api key ain above line
         response.enqueue(object : Callback<weatherapp> {
             override fun onResponse(call: Call<weatherapp>, response: Response<weatherapp>) {
                 val responseBody = response.body()
